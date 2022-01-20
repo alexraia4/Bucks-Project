@@ -1,11 +1,16 @@
-import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
+import "./styles/App.css";
+import Product from "./components/Product";
+import Easiest from "./components/Easiest";
+import Help from "./components/Help";
+import Works from "./components/Works";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      App
+      <Product />
+      <Easiest />
+      <Help />
+      <Works />
     </div>
   );
 }

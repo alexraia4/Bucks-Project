@@ -1,0 +1,14 @@
+.Help {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Help_box {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(213, 215, 217);
+  border-radius: 12px;
+  padding: 2vw;
+}
