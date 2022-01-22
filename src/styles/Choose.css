@@ -1,3 +1,32 @@
 .Choose {
+  height: 80vh;
+}
+
+.Choose_square_one {
+  position: absolute;
+  top: 230%;
+  z-index: 2;
+  left: 30vw;
+  height: 40vh;
+  width: 20%;
+  background-color: rgb(204, 205, 205);
+  border-radius: 20px;
+}
+
+.Choose_square_two {
+  position: relative;
+  left: 40vw;
+  top: 10%;
   height: 60vh;
+  width: 40%;
+  border-radius: 20px;
+  background-color: rgb(238, 249, 249);
+  display: flex;
+  justify-content: center;
+  padding-left: 12%;
+}
+
+
+.Choose_square_two_text {
+  width: 50%;
 }
