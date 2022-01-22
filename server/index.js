@@ -9,6 +9,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
-app.listen(3105, () => {
-  console.log(`Listening on port 3105`);
+app.listen(3333, () => {
+  console.log(`Listening on port 3333`);
 });
