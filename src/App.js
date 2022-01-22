@@ -3,6 +3,7 @@ import Product from "./components/Product";
 import Easiest from "./components/Easiest";
 import Help from "./components/Help";
 import Works from "./components/Works";
+import Choose from "./components/Choose";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Easiest />
       <Help />
       <Works />
+      <Choose />
     </div>
   );
 }
