@@ -1,0 +1,9 @@
+.Bottom {
+  height: 15vh;
+  background-color: #009AE7;
+  color: #ffffff;
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
