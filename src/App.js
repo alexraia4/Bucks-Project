@@ -4,9 +4,8 @@ import Easiest from "./components/Easiest";
 import Help from "./components/Help";
 import Works from "./components/Works";
 import Choose from "./components/Choose";
-import Want from "./components/Want";
+import Yourself from "./components/Yourself";
 import Contact from "./components/Contact";
-import Thanks from "./components/Thanks";
 import Bottom from "./components/Bottom";
 
 function App() {
@@ -17,9 +16,8 @@ function App() {
       <Help />
       <Works />
       <Choose />
-      <Want />
+      <Yourself />
       <Contact />
-      <Thanks />
       <Bottom />
     </div>
   );
