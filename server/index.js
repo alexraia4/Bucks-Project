@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 
@@ -5,7 +7,6 @@ var cors = require("cors");
 app.use(cors());
 
 const registerNewClient = (req, res) => {
-  console.log(req.body);
   const {
     product,
     link,
@@ -23,14 +24,14 @@ const registerNewClient = (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "info@streamlineproduct.com",
-      pass: "",
+      user: `${process.env.EMAIL}`,
+      pass: `${process.env.EMAIL_PASS}`,
     },
   });
 
   var mailOptions = {
     from: "youremail@gmail.com",
-    to: "alexraia4@gmail.com",
+    to: "info@productstreamline.com",
     subject: "THIS IS AN AUTOMATED EMAIL SENT FROM ALEX CORP",
     text: `What product do you want to source: ${product}, Do you have an Amazon or Alibaba link: ${link}, How soon do you need samples: ${soon}, Full Name: ${fullname}`,
   };
@@ -47,10 +48,9 @@ const registerNewClient = (req, res) => {
   res.sendStatus(200);
 };
 
-
 const path = require("path");
 app.use(express.json());
-app.post('/', registerNewClient)
+app.post("/", registerNewClient);
 
 //has to be after routes
 app.use(express.static(__dirname + "/../build"));
