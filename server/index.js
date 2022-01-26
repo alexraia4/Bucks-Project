@@ -23,8 +23,8 @@ const registerNewClient = (req, res) => {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "alexraia4@gmail.com",
-      pass: "PowerStars52%",
+      user: "info@streamlineproduct.com",
+      pass: "",
     },
   });
 
