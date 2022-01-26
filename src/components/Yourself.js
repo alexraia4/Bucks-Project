@@ -96,7 +96,9 @@ function Want() {
         <input type="checkBox" onChange={handleEmailCheckChange} />
         <p>Email</p>
       </div>
-      <p onClick={submit}>Submit</p>
+      <p onClick={submit} style={{ cursor: "pointer" }}>
+        Submit
+      </p>
     </div>
   );
 }
