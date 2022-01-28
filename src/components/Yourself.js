@@ -52,10 +52,10 @@ function Want() {
 
   const submit = () => {
     const payload = {
+      fullName,
       product,
       link,
       soon,
-      fullName,
       email,
       phoneNumber,
       text,
@@ -64,7 +64,7 @@ function Want() {
     };
 
     axios
-      .post("http://134.209.72.40:3334/", payload)
+      .post("http://localhost:3334/", payload)
       .then(function (response) {
         console.log(response);
       })

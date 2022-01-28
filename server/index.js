@@ -11,7 +11,7 @@ const registerNewClient = (req, res) => {
     product,
     link,
     soon,
-    fullname,
+    fullName,
     email,
     phoneNumber,
     text,
@@ -19,7 +19,7 @@ const registerNewClient = (req, res) => {
     emailCheck,
   } = req.body;
 
-  ////////////// NODE MAILER STUFF //////////////////////////////
+  //////////// NODE MAILER STUFF //////////////////////////////
   var nodemailer = require("nodemailer");
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -33,8 +33,10 @@ const registerNewClient = (req, res) => {
     from: `${email}`,
     to: "alexraia4@gmail.com",
     subject: "THIS IS AN AUTOMATED EMAIL SENT FROM ALEX CORP",
-    text: `What product do you want to source: ${product}, Do you have an Amazon or Alibaba link: ${link}, How soon do you need samples: ${soon}, Full Name: ${fullname}`,
+    html: `What product do you want to source: <b>${product}</b><br />Do you have an Amazon or Alibaba link: ${link}<br />How soon do you need samples: ${soon}<br />Full Name: ${fullName}`,
   };
+
+  console.log(mailOptions);
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -46,7 +48,7 @@ const registerNewClient = (req, res) => {
   ///////////////////////////////////////////////////////////////
 
   res.sendStatus(200);
-};;
+};
 
 const path = require("path");
 app.use(express.json());
