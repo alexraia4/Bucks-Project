@@ -1,9 +1,16 @@
 import "../styles/Choose.css";
+import guy from "../images/guy_with_stuff.png";
 
 function Choose() {
   return (
     <div className="Choose">
-      <div className="Choose_square_one"></div>
+      <div className="Choose_square_one">
+        <img
+          className="Yourself_image"
+          src={guy}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </div>
       <div className="Choose_square_two">
         <div className="Choose_square_two_text">
           <p
@@ -22,11 +29,12 @@ function Choose() {
               marginBottom: "0.5vh",
             }}
           >
-            We're awesome.
+            Fast
           </p>
           <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            We get back to you within five an hour during business hours, and if
+            you send us a message after hours, we will get back to you the next
+            day.
           </p>
           <p
             style={{
@@ -34,11 +42,11 @@ function Choose() {
               marginBottom: "0.5vh",
             }}
           >
-            Everyone loves us.
+            Simple
           </p>
           <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            All transaction US based, so no international fees. Plus it’s simple
+            and safe.
           </p>
           <p
             style={{
@@ -46,11 +54,12 @@ function Choose() {
               marginBottom: "0.5vh",
             }}
           >
-            We're nice.
+            Secure
           </p>
           <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            We spend the time trying to make sure we know exactly what you want
+            so that our factories can cater to your specific customization. We
+            take the time to order sample sets so you get what you order.
           </p>
         </div>
       </div>

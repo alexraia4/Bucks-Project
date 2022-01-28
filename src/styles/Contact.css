@@ -1,0 +1,11 @@
+.Contact {
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Contact_image {
+  height: 70%;
+  border-radius: 12px;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Yourself.css";
 import axios from "axios";
+import guy from "../images/guy_with_thing.png";
 
 function Want() {
   const [product, setProduct] = useState("");
@@ -73,32 +74,84 @@ function Want() {
   };
 
   return (
-    <div className="Want">
-      <p>Tell us about yourself</p>
-      <p>What product do you want to source?</p>
-      <textarea onChange={handleProductChange} />
-      <p>Do you have an Amazon or Alibaba link?</p>
-      <textarea onChange={handleLinkChange} />
-      <p>How soon do you need samples?</p>
-      <textarea onChange={handleSoonChange} />
-      <hr />
-      <p>Full Name</p>
-      <textarea onChange={handleFullNameChange} />
-      <p>Email</p>
-      <textarea onChange={handleEmailChange} />
-      <p>Phone Number</p>
-      <textarea onChange={handlePhoneNumberChange} />
-      <div>
-        <input type="checkBox" onChange={handleTextChange} />
-        <p>Text</p>
-        <input type="checkBox" onChange={handleCallChange} />
-        <p>Call</p>
-        <input type="checkBox" onChange={handleEmailCheckChange} />
-        <p>Email</p>
+    <div className="Yourself">
+      <div className="Yourself_text">
+        <div style={{ width: "80%" }}>
+          <p style={{ color: "#009AE7", fontSize: "2vw", marginBottom: "2vh" }}>
+            Tell us about yourself
+          </p>
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>*Name</p>
+            <textarea
+              onChange={handleFullNameChange}
+              style={{ width: "90%" }}
+            />
+          </div>
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>*Email</p>
+            <textarea onChange={handleEmailChange} style={{ width: "90%" }} />
+          </div>
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>Phone Number</p>
+            <textarea
+              onChange={handlePhoneNumberChange}
+              style={{ width: "90%" }}
+            />
+          </div>
+
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p style={{ marginBottom: "3%" }}>Preferred Contact Method</p>
+            <div className="Yourself_text_checkboxes">
+              <div className="Yourself_text_checkbox">
+                <input type="checkBox" onChange={handleTextChange} />
+                <p>Text</p>
+              </div>
+              <div className="Yourself_text_checkbox">
+                <input type="checkBox" onChange={handleCallChange} />
+                <p>Call</p>
+              </div>
+              <div className="Yourself_text_checkbox">
+                <input type="checkBox" onChange={handleEmailCheckChange} />
+                <p>Email</p>
+              </div>
+            </div>
+          </div>
+
+          <hr className="Yourself_divider" />
+
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>What product do you want to source?</p>
+            <textarea onChange={handleProductChange} style={{ width: "90%" }} />
+          </div>
+
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>Do you have an Amazon or Alibaba link?</p>
+            <textarea onChange={handleLinkChange} style={{ width: "90%" }} />
+          </div>
+
+          <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
+            <p>Additional Comments</p>
+            <textarea onChange={handleSoonChange} style={{ width: "90%" }} />
+          </div>
+
+          <button
+            type="button"
+            onClick={submit}
+            style={{
+              cursor: "pointer",
+              color: "white",
+              backgroundColor: "#009AE7",
+              width: "90%",
+              borderRadius: "12px",
+              padding: "2%",
+              fontSize: "1vw",
+            }}
+          >
+            Submit
+          </button>
+        </div>
       </div>
-      <p onClick={submit} style={{ cursor: "pointer" }}>
-        Submit
-      </p>
+      <img className="Yourself_image" src={guy} />
     </div>
   );
 }
