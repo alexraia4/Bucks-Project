@@ -7,7 +7,7 @@
   top: 230%;
   z-index: 2;
   left: 30vw;
-  height: 40vh;
+  height: 50vh;
   width: 20%;
   background-color: rgb(204, 205, 205);
   border-radius: 20px;
@@ -17,13 +17,13 @@
   position: relative;
   left: 40vw;
   top: 10%;
-  height: 60vh;
+  height: 70vh;
   width: 40%;
   border-radius: 20px;
   background-color: rgb(238, 249, 249);
   display: flex;
   justify-content: center;
-  padding-left: 12%;
+  padding-left: 10%;
 }
 
 

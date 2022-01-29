@@ -1,6 +1,12 @@
 import "../styles/Help.css";
 
 function Help() {
+
+  const scrollToYourself = () => {
+    document.body.scrollTop = 2600;
+    document.documentElement.scrollTop = 2600;
+  };
+
   return (
     <div className="Help">
       <div className="Help_box">
@@ -22,9 +28,10 @@ function Help() {
         >
           Tell us about what you need and we'll let you know how we can help.
         </p>
-        <div className="Help_get_started">
-          <p>Get Started ↓</p>
-        </div>
+
+        <button className="Help_get_started" onClick={scrollToYourself}>
+          Get Started ↓
+        </button>
       </div>
       <div className="Help_box">
         <p style={{ color: "#009AE7", fontSize: "2vw" }}>Contact Us</p>

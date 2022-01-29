@@ -4,63 +4,57 @@ import axios from "axios";
 import guy from "../images/guy_with_thing.png";
 
 function Want() {
-  const [product, setProduct] = useState("");
-  const [link, setLink] = useState("");
-  const [soon, setSoon] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+
   const [text, setText] = useState(false);
   const [call, setCall] = useState(false);
   const [emailCheck, setEmailCheck] = useState(false);
 
-  const handleProductChange = (e) => {
-    setProduct(e.target.value);
-  };
+  const [product, setProduct] = useState("");
+  const [link, setLink] = useState("");
+  const [comments, setComments] = useState("");
 
-  const handleLinkChange = (e) => {
-    setLink(e.target.value);
+  const handleNameChange = (e) => {
+    setName(e.target.value);
   };
-
-  const handleSoonChange = (e) => {
-    setSoon(e.target.value);
-  };
-
-  const handleFullNameChange = (e) => {
-    setFullName(e.target.value);
-  };
-
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-
   const handlePhoneNumberChange = (e) => {
     setPhoneNumber(e.target.value);
   };
-
   const handleTextChange = (e) => {
     setText(e.target.checked);
   };
-
   const handleCallChange = (e) => {
     setCall(e.target.checked);
   };
-
   const handleEmailCheckChange = (e) => {
     setEmailCheck(e.target.checked);
+  };
+  const handleProductChange = (e) => {
+    setProduct(e.target.value);
+  };
+  const handleLinkChange = (e) => {
+    setLink(e.target.value);
+  };
+  const handleCommentsChange = (e) => {
+    setComments(e.target.value);
   };
 
   const submit = () => {
     const payload = {
-      fullName,
-      product,
-      link,
-      soon,
+      name,
       email,
       phoneNumber,
       text,
       call,
       emailCheck,
+      product,
+      link,
+      comments,
     };
 
     axios
@@ -71,6 +65,17 @@ function Want() {
       .catch(function (error) {
         console.log(error);
       });
+
+    alert("Your information has been recieved!");
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+    setText(false);
+    setCall(false);
+    setEmailCheck(false);
+    setProduct("");
+    setLink("");
+    setComments("");
   };
 
   return (
@@ -83,19 +88,25 @@ function Want() {
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>*Name</p>
             <textarea
-              onChange={handleFullNameChange}
+              onChange={handleNameChange}
               style={{ width: "90%" }}
+              value={name}
             />
           </div>
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>*Email</p>
-            <textarea onChange={handleEmailChange} style={{ width: "90%" }} />
+            <textarea
+              onChange={handleEmailChange}
+              style={{ width: "90%" }}
+              value={email}
+            />
           </div>
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>Phone Number</p>
             <textarea
               onChange={handlePhoneNumberChange}
               style={{ width: "90%" }}
+              value={phoneNumber}
             />
           </div>
 
@@ -103,15 +114,27 @@ function Want() {
             <p style={{ marginBottom: "3%" }}>Preferred Contact Method</p>
             <div className="Yourself_text_checkboxes">
               <div className="Yourself_text_checkbox">
-                <input type="checkBox" onChange={handleTextChange} />
+                <input
+                  type="checkBox"
+                  onChange={handleTextChange}
+                  checked={text}
+                />
                 <p>Text</p>
               </div>
               <div className="Yourself_text_checkbox">
-                <input type="checkBox" onChange={handleCallChange} />
+                <input
+                  type="checkBox"
+                  onChange={handleCallChange}
+                  checked={call}
+                />
                 <p>Call</p>
               </div>
               <div className="Yourself_text_checkbox">
-                <input type="checkBox" onChange={handleEmailCheckChange} />
+                <input
+                  type="checkBox"
+                  onChange={handleEmailCheckChange}
+                  checked={emailCheck}
+                />
                 <p>Email</p>
               </div>
             </div>
@@ -121,17 +144,29 @@ function Want() {
 
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>What product do you want to source?</p>
-            <textarea onChange={handleProductChange} style={{ width: "90%" }} />
+            <textarea
+              onChange={handleProductChange}
+              style={{ width: "90%" }}
+              value={product}
+            />
           </div>
 
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>Do you have an Amazon or Alibaba link?</p>
-            <textarea onChange={handleLinkChange} style={{ width: "90%" }} />
+            <textarea
+              onChange={handleLinkChange}
+              style={{ width: "90%" }}
+              value={link}
+            />
           </div>
 
           <div style={{ color: "rgb(177, 178, 178)", marginBottom: "2vh" }}>
             <p>Additional Comments</p>
-            <textarea onChange={handleSoonChange} style={{ width: "90%" }} />
+            <textarea
+              onChange={handleCommentsChange}
+              style={{ width: "90%" }}
+              value={comments}
+            />
           </div>
 
           <button
@@ -143,6 +178,7 @@ function Want() {
               backgroundColor: "#009AE7",
               width: "90%",
               borderRadius: "12px",
+              border: "none",
               padding: "2%",
               fontSize: "1vw",
             }}

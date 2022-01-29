@@ -8,16 +8,30 @@ app.use(cors());
 
 const registerNewClient = (req, res) => {
   const {
-    product,
-    link,
-    soon,
-    fullName,
+    name,
     email,
     phoneNumber,
     text,
     call,
     emailCheck,
+    product,
+    link,
+    comments,
   } = req.body;
+
+  let textYN = "No";
+  let callYN = "No";
+  let emailYN = "No";
+
+  if (text) {
+    textYN = "Yes";
+  }
+  if (call) {
+    callYN = "Yes";
+  }
+  if (emailCheck) {
+    emailYN = "Yes";
+  }
 
   //////////// NODE MAILER STUFF //////////////////////////////
   var nodemailer = require("nodemailer");
@@ -33,10 +47,8 @@ const registerNewClient = (req, res) => {
     from: `${email}`,
     to: "alexraia4@gmail.com",
     subject: "THIS IS AN AUTOMATED EMAIL SENT FROM ALEX CORP",
-    html: `What product do you want to source: <b>${product}</b><br />Do you have an Amazon or Alibaba link: ${link}<br />How soon do you need samples: ${soon}<br />Full Name: ${fullName}`,
+    html: `Name: <b>${name}</b><br/>Email: <b>${email}</b><br/>Phone Number: <b>${phoneNumber}</b><br/>Allow Text: <b>${textYN}</b><br/>Allow Call: <b>${callYN}</b><br/>Allow Email: <b>${emailYN}</b><br/>Product That Needs Sourcing: <b>${product}</b><br/>Amazon or Alibaba Link: <b>${link}</b><br/>Additional Comments: <b>${comments}<b>`,
   };
-
-  console.log(mailOptions);
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {

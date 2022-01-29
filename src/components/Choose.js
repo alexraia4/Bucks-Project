@@ -26,12 +26,12 @@ function Choose() {
           <p
             style={{
               fontSize: "1.6vw",
-              marginBottom: "0.5vh",
+              marginBottom: "1vh",
             }}
           >
             Fast
           </p>
-          <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
+          <p style={{ color: "rgb(177, 178, 178)", marginBottom: "4vh" }}>
             We get back to you within five an hour during business hours, and if
             you send us a message after hours, we will get back to you the next
             day.
@@ -39,24 +39,24 @@ function Choose() {
           <p
             style={{
               fontSize: "1.6vw",
-              marginBottom: "0.5vh",
+              marginBottom: "1vh",
             }}
           >
             Simple
           </p>
-          <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
+          <p style={{ color: "rgb(177, 178, 178)", marginBottom: "4vh" }}>
             All transaction US based, so no international fees. Plus it’s simple
             and safe.
           </p>
           <p
             style={{
               fontSize: "1.6vw",
-              marginBottom: "0.5vh",
+              marginBottom: "1vh",
             }}
           >
             Secure
           </p>
-          <p style={{ color: "rgb(177, 178, 178)", marginBottom: "1.5vh" }}>
+          <p style={{ color: "rgb(177, 178, 178)" }}>
             We spend the time trying to make sure we know exactly what you want
             so that our factories can cater to your specific customization. We
             take the time to order sample sets so you get what you order.
