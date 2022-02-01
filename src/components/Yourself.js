@@ -58,7 +58,7 @@ function Want() {
     };
 
     axios
-      .post("http://localhost:3334/", payload)
+      .post("http://134.209.72.40:3334/", payload)
       .then(function (response) {
         console.log(response);
       })
