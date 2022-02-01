@@ -45,7 +45,7 @@ const registerNewClient = (req, res) => {
   //info@productstreamline.com
   var mailOptions = {
     from: `${email}`,
-    to: "alexraia4@gmail.com",
+    to: "info@productstreamline.com",
     subject: "THIS IS AN AUTOMATED EMAIL SENT FROM ALEX CORP",
     html: `Name: <b>${name}</b><br/>Email: <b>${email}</b><br/>Phone Number: <b>${phoneNumber}</b><br/>Allow Text: <b>${textYN}</b><br/>Allow Call: <b>${callYN}</b><br/>Allow Email: <b>${emailYN}</b><br/>Product That Needs Sourcing: <b>${product}</b><br/>Amazon or Alibaba Link: <b>${link}</b><br/>Additional Comments: <b>${comments}<b>`,
   };
